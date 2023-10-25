@@ -3,7 +3,7 @@ import 'package:bloc_architecture/src/services/movies_api_service.dart';
 
 import '../models/item_model.dart';
 
-class Repository {
+class MoviesRepository {
   final moviesApiProvider = MoviesApiService();
 
   Future<ItemModel> fetchAllMovies() => moviesApiProvider.fetchMovieList();

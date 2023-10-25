@@ -1,3 +1,4 @@
+import 'package:bloc_architecture/src/data/static/colors.dart';
 import 'package:bloc_architecture/src/provider/homepage_provider.dart';
 import 'package:bloc_architecture/src/provider/profile_provider.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class Profile extends StatelessWidget {
                         profileProvider.saveDataInSharedPrefs();
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
+                            backgroundColor: AppColors.userSavedSuccessColor,
                             content: Text("Data saved to preferences."),
                           ),
                         );

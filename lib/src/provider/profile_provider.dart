@@ -1,3 +1,4 @@
+import 'package:bloc_architecture/src/repository/user_repo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -5,7 +6,7 @@ class ProfileProvider extends ChangeNotifier {
   static const String _key = 'name';
   final String _value = 'Suraj';
   String? result;
-  late ProfileProvider _profileProvider;
+  final UserRepository userRepository=UserRepository();
 
   late final SharedPreferences preferences;
 
@@ -17,11 +18,7 @@ class ProfileProvider extends ChangeNotifier {
 
   String get value => _value;
 
-  ProfileProvider get profileProvider=>_profileProvider;
 
-  initProvider(ProfileProvider provider){
-    _profileProvider=provider;
-  }
 
   initSharedPrefs() async {
     preferences = await SharedPreferences.getInstance();
@@ -32,7 +29,7 @@ class ProfileProvider extends ChangeNotifier {
   }
 
   loadDataFromSharedPrefs() {
-    result = preferences.getString(_key);
+    result = userRepository.fetchUserDataFromDb(_key);
     notifyListeners();
   }
 }
