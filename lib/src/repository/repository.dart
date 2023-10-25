@@ -1,9 +1,10 @@
 import 'dart:async';
-import 'movie_api_provider.dart';
+import 'package:bloc_architecture/src/services/movies_api_service.dart';
+
 import '../models/item_model.dart';
 
 class Repository {
-  final moviesApiProvider = MovieApiProvider();
+  final moviesApiProvider = MoviesApiService();
 
   Future<ItemModel> fetchAllMovies() => moviesApiProvider.fetchMovieList();
 }

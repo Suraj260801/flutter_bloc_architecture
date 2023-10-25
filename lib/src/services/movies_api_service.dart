@@ -3,7 +3,7 @@ import 'package:http/http.dart' show Client;
 import 'dart:convert';
 import '../models/item_model.dart';
 
-class MovieApiProvider {
+class MoviesApiService {
   Client client = Client();
   static const String url="http://api.themoviedb.org/3/movie/popular?api_key=e2b5c7b5e09c1b1dcd1bff4c5debdaa9";
   final Uri uri=Uri.parse(url);

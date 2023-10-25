@@ -7,6 +7,7 @@ class CustomGridview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.custom(
+      scrollDirection: Axis.vertical,
       gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: 15,
