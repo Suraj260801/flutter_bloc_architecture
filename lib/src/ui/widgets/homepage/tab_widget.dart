@@ -3,13 +3,13 @@ import 'package:bloc_architecture/src/ui/widgets/homepage/custom_gridview.dart';
 import 'package:flutter/material.dart';
 
 class TabWidget extends StatelessWidget {
-  const TabWidget({super.key, required this.snapshot});
+  const TabWidget({super.key, required this.movies});
 
-  final AsyncSnapshot<ItemModel> snapshot;
+  final List<Result> movies;
 
 
   @override
   Widget build(BuildContext context) {
-    return CustomGridview(snapshot: snapshot, crossAxisCount: 3);
+    return CustomGridview(movies:movies, crossAxisCount: 3);
   }
 }

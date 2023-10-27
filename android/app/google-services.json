@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "697971963931",
+    "project_id": "flutter-bloc-architectur-18306",
+    "storage_bucket": "flutter-bloc-architectur-18306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697971963931:android:6be9ac5bc9c45a403520be",
+        "android_client_info": {
+          "package_name": "com.example.bloc_architecture"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCneHhvG4EQL4s8kaQFPh78ClK9NYLdVb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
