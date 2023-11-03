@@ -1,6 +1,7 @@
 import 'package:bloc_architecture/firebase_options.dart';
 import 'package:bloc_architecture/src/services/firebase_api_service.dart';
 import 'package:bloc_architecture/src/ui/bits/button_theme.dart';
+import 'package:bloc_architecture/src/ui/screens/dash_board.dart';
 import 'package:bloc_architecture/src/ui/screens/homepage.dart';
 import 'package:bloc_architecture/src/ui/screens/notifications.dart';
 import 'package:bloc_architecture/src/ui/screens/profile.dart';
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/', page:()=> const HomePage()),
         GetPage(name: '/profile', page: ()=>const Profile(),transition: Transition.leftToRight),
-        GetPage(name: '/notifications', page: ()=>const Notifications(),transition: Transition.leftToRight)
+        GetPage(name: '/notifications', page: ()=>const Notifications(),transition: Transition.leftToRight),
+        GetPage(name: '/dashboard', page: ()=>const DashBoard()),
       ],
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

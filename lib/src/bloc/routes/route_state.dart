@@ -9,3 +9,5 @@ class InitialRouteState extends RouteState{}
 class ProfileRouteState extends RouteState {}
 
 class NotificationRouteState extends RouteState {}
+
+class DashBoardRouteState extends RouteState{}

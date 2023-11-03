@@ -11,7 +11,6 @@ import 'package:get/get.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +23,18 @@ class HomePage extends StatelessWidget {
               child: BlocConsumer<HomePageProvider,RouteState>(
 
                 listener: (BuildContext context, RouteState state) {
-                    if(state is ProfileRouteState){
+                  switch(state.runtimeType){
+                    case ProfileRouteState:
                       Get.toNamed('/profile');
-                    }else if(state is NotificationRouteState){
+                      break;
+                    case NotificationRouteState:
                       Get.toNamed('/notifications',arguments: NotificationModel(title: 'No Message', message: "No Discription"));
-                    }
-
+                      break;
+                    case DashBoardRouteState:
+                      Get.toNamed('/dashboard');
+                      break;
+                    default:
+                  }
                 },
                 builder: (BuildContext context,RouteState state){
                   return DropdownButton<String>(

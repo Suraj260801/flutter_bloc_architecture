@@ -2,6 +2,7 @@ class Constants{
   static const List<String> settings = [
     'Profile',
     'Notifications',
+    'DashBoard'
   ];
 }
 // Platform  Firebase App Id
