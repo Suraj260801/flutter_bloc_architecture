@@ -10,8 +10,8 @@ class CustomGridview extends StatelessWidget {
       scrollDirection: Axis.vertical,
       gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
-        mainAxisSpacing: 15,
-        crossAxisSpacing: 15,
+        mainAxisSpacing: 5,
+        crossAxisSpacing: 5,
 
         // You can customize grid delegate further here
       ),
@@ -20,8 +20,30 @@ class CustomGridview extends StatelessWidget {
             (BuildContext context, int index) {
           // Build your grid item based on the index
           return GridTile(
-            child: Image.network(
-              'https://image.tmdb.org/t/p/w185${movies[index].posterPath}',fit: BoxFit.fill,),);
+            child: Card(
+              elevation: 10,
+              shadowColor: Colors.black,
+              surfaceTintColor: Colors.black,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(
+
+                  'https://image.tmdb.org/t/p/w185${movies[index].posterPath}',fit: BoxFit.fill,loadingBuilder: (_,Widget child,ImageChunkEvent? loadingProgress){
+                  if (loadingProgress == null) {
+                    return child;
+                  }
+                  return Center(
+                    child: CircularProgressIndicator(
+                      value: loadingProgress.expectedTotalBytes != null
+                          ? loadingProgress.cumulativeBytesLoaded /
+                          loadingProgress.expectedTotalBytes!
+                          : null,
+                    ),
+                  );
+
+                },),
+              ),
+            ),);
         },
       ),
     );

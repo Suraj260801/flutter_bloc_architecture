@@ -1,6 +1,7 @@
 import 'package:bloc_architecture/src/bloc/movies_bloc.dart';
 import 'package:bloc_architecture/src/models/item_model.dart';
 import 'package:bloc_architecture/src/provider/movies_provider.dart';
+import 'package:bloc_architecture/src/ui/pieces/responsive_layout.dart';
 import 'package:bloc_architecture/src/ui/widgets/homepage/tab_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +27,6 @@ class BuildList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     ///Building Movies List Using Provider
     // return Consumer<MoviesProvider>(builder: (context, provider, child) {
     //   return FutureBuilder<ItemModel>(
@@ -62,22 +62,10 @@ class BuildList extends StatelessWidget {
         if (moviesModel.isEmpty) {
           return const Center(child: CircularProgressIndicator());
         } else {
-          return LayoutBuilder(builder: (context, constraints) {
-            if (constraints.maxWidth < 500) {
-              return MobileWidget(
-                movies: moviesModel,
-              );
-            } else if (constraints.maxWidth > 500 &&
-                constraints.maxWidth < 1300) {
-              return TabWidget(
-                movies: moviesModel,
-              );
-            } else {
-              return DesktopWidget(
-                movies: moviesModel,
-              );
-            }
-          });
+          return ResponsiveLayout(
+              mobileWidget: MobileWidget(movies: moviesModel),
+              tabWidget: TabWidget(movies: moviesModel),
+              desktopWidget: DesktopWidget(movies: moviesModel));
         }
       }),
     );

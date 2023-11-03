@@ -1,5 +1,6 @@
 import 'package:bloc_architecture/firebase_options.dart';
 import 'package:bloc_architecture/src/services/firebase_api_service.dart';
+import 'package:bloc_architecture/src/ui/bits/button_theme.dart';
 import 'package:bloc_architecture/src/ui/screens/homepage.dart';
 import 'package:bloc_architecture/src/ui/screens/notifications.dart';
 import 'package:bloc_architecture/src/ui/screens/profile.dart';
@@ -29,11 +30,7 @@ class MyApp extends StatelessWidget {
       ],
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: appTheme,
       home: const HomePage(),
     );
   }
