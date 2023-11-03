@@ -1,8 +1,9 @@
-import 'package:bloc_architecture/src/provider/route_event.dart';
-import 'package:bloc_architecture/src/provider/route_state.dart';
+
+import 'package:bloc_architecture/src/bloc/routes/route_event.dart';
+import 'package:bloc_architecture/src/bloc/routes/route_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../data/static/constants.dart';
+import '../../data/static/constants.dart';
 
 class HomePageProvider extends Bloc<RouteEvent,RouteState> {
 

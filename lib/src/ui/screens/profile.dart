@@ -1,7 +1,5 @@
 import 'package:bloc_architecture/src/data/static/colors.dart';
-import 'package:bloc_architecture/src/provider/homepage_provider.dart';
 import 'package:bloc_architecture/src/provider/profile_provider.dart';
-import 'package:bloc_architecture/src/ui/bits/button_theme.dart';
 import 'package:bloc_architecture/src/ui/bits/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

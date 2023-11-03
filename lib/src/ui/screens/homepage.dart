@@ -1,13 +1,12 @@
+import 'package:bloc_architecture/src/bloc/routes/homepage_bloc.dart';
+import 'package:bloc_architecture/src/bloc/routes/route_state.dart';
 import 'package:bloc_architecture/src/data/static/constants.dart';
 import 'package:bloc_architecture/src/models/notification_model.dart';
-import 'package:bloc_architecture/src/provider/route_state.dart';
-import 'package:bloc_architecture/src/provider/homepage_provider.dart';
 import 'package:bloc_architecture/src/ui/bits/custom_text.dart';
 import 'package:bloc_architecture/src/ui/widgets/homepage/movies_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -1,5 +1,4 @@
 import 'package:bloc_architecture/src/models/item_model.dart';
-import 'package:bloc_architecture/src/models/movies_model.dart';
 import 'package:bloc_architecture/src/repository/movies_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
